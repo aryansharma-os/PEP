@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #char-count{
+      font-size: 18px;
+     
+
+    }
+    .exceeded{
+      color:red;
+    }
+  </style>
+</head>
+
+<body>
+  <textarea id="text"></textarea>
+  <p id="char-count">0 / 100</p>
+
+  <script>
+    (function(){
+      const textarea = document.getElementById("text");
+      const count = document.getElementById("char-count");
+      const max = 100;
+
+
+      textarea.addEventListener("input",function(){
+        const currentlength = textarea.value.length;
+        count.textContent = `${currentlength} / ${max}`;
+
+        if(currentlength > max ){
+          count.classList.add("exceeded");
+        }
+        else{
+          count.classList.remove("exceeded");
+        }
+      });
+
+
+    })();
+  </script>
+  
+</body>
+</html>

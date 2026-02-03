@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #btn{
+      color: blue;
+      background: yellow;
+      
+    }
+   
+  </style>
+
+
+</head>
+
+<body>
+  <button  id="btn">Click</button>
+  <p id="count">0</p>
+  <script>
+    (function(){
+      let count = 0;
+      let isT = false;
+      
+      const button = document.getElementById("btn");
+      const c = document.getElementById("count");
+
+      button.addEventListener("click",function(){
+        if (isT) return;
+        
+        count++;
+        c.textContent = count;
+        isT = true;
+
+
+        setTimeout(function(){
+          isT = false;
+        },1000);
+      });
+    })();
+  </script>
+
+  
+</body>
+</html>
+
+
+
